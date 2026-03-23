@@ -49,7 +49,7 @@ export function LoadingScreen({ name, minMs = 1500 }: Props) {
                     <motion.span
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ delay: 0.3 }}
+                        transition={{ delay: 0.1 }}
                         className="text-[0.55rem] sm:text-[0.6rem] uppercase tracking-[0.4em] text-cyan-500/80 font-mono mb-2 block"
                     >
                         Terminal Session
@@ -57,7 +57,7 @@ export function LoadingScreen({ name, minMs = 1500 }: Props) {
                     <motion.h1
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4, duration: 0.6 }}
+                        transition={{ delay: 0.2, duration: 0.4 }}
                         className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-[0.1em] uppercase text-white"
                         style={{ fontFamily: 'var(--font-display)', textShadow: '0 0 20px rgba(255,255,255,0.1)' }}
                     >
@@ -66,7 +66,7 @@ export function LoadingScreen({ name, minMs = 1500 }: Props) {
                     <motion.span
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ delay: 0.6 }}
+                        transition={{ delay: 0.3 }}
                         className="text-[0.6rem] sm:text-[0.7rem] uppercase tracking-[0.25em] mt-2 text-gray-400 font-mono block"
                     >
                         Full-Stack Developer Space
@@ -122,7 +122,7 @@ export function LoadingScreen({ name, minMs = 1500 }: Props) {
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            transition={{ delay: 1.8 }}
+                            transition={{ delay: 0.6 }}
                             className="flex items-center gap-2 sm:gap-3 mt-1"
                         >
                             <span className="text-[#3b82f6] font-bold">❯</span>
