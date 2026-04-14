@@ -12,7 +12,7 @@ A modern, high-performance developer portfolio built with a focus on **clean UI,
 
 ## 🎥 Demo Preview
 
-![Demo](./public/demo.gif)
+![Demo](public/demo.gif)
 
 ---
 
