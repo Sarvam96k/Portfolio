@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { ExternalLink, Github, Star, Code2, ChevronDown, ChevronUp } from 'lucide-react';
 import { usePortfolioStore } from '../../store/portfolioStore';
 import type { Project } from '../../types';
