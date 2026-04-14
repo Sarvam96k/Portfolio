@@ -73,8 +73,8 @@ export const AdminSettings = () => {
             title: 'Personal Info',
             icon: <User size={18} />,
             fields: [
-                { key: 'name', label: 'Full Name', placeholder: 'Phyo Min Thein', type: 'text' },
-                { key: 'navbarName', label: 'Navbar Display Name', placeholder: 'e.g. Phyo, PMT, Leo...', type: 'text' },
+                { key: 'name', label: 'Full Name', placeholder: ' Sarvam Shirodkar', type: 'text' },
+                { key: 'navbarName', label: 'Navbar Display Name', placeholder: 'e.g. Sarvam, SM, Leo...', type: 'text' },
                 { key: 'tagline', label: 'Nickname / Handle', placeholder: 'Leo', type: 'text' },
                 { key: 'heroTitle', label: 'Hero Title', placeholder: 'Full-Stack Developer', type: 'text' },
             ],
@@ -84,7 +84,7 @@ export const AdminSettings = () => {
             icon: <Globe size={18} />,
             fields: [
                 { key: 'bio', label: 'Short Bio (Hero Section)', placeholder: 'A short sentence about you...', type: 'textarea' },
-                { key: 'aboutTitle', label: 'About Section Heading', placeholder: "Hi, I'm Phyo Min Thein", type: 'text' },
+                { key: 'aboutTitle', label: 'About Section Heading', placeholder: "Hi, I'm Sarvam Shirodkar", type: 'text' },
                 { key: 'aboutMe', label: 'About Me (About Section)', placeholder: 'Tell your story...', type: 'textarea' },
                 { key: 'heroGif', label: 'Hero GIF / Illustration URL', placeholder: 'https://... or leave blank for default', type: 'url' },
             ],

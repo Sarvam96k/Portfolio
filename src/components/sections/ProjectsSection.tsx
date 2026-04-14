@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ExternalLink, Github, Star, Code2, ChevronDown, ChevronUp } from 'lucide-react';
 import { usePortfolioStore } from '../../store/portfolioStore';
 import type { Project } from '../../types';
@@ -8,9 +8,11 @@ import { CertificatesSection } from './CertificatesSection';
 
 
 const ProjectCard = ({ project }: { project: Project }) => {
+    const navigate = useNavigate();
+
     return (
-        <Link
-            to={`/project/${project.id}`}
+        <div
+            onClick={() => navigate(`/project/${project.id}`)}
             className="group h-full bg-white/[0.02] hover:bg-white/[0.04] rounded-3xl overflow-hidden cursor-pointer flex flex-col transition-all duration-500 border border-white/5 hover:border-white/10 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] hover:-translate-y-2 relative"
         >
             {/* Image Container */}
@@ -18,18 +20,24 @@ const ProjectCard = ({ project }: { project: Project }) => {
                 {/* Inset shadow 'mask' to hide sub-pixel leaks */}
                 <div className="absolute inset-0 z-20 rounded-t-3xl pointer-events-none shadow-[inset_0_0_0_1px_rgba(255,255,255,0.02)]" />
 
-                <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
-                    style={{
-                        backfaceVisibility: 'hidden',
-                        WebkitBackfaceVisibility: 'hidden',
-                    }}
-                    onError={(e) => {
-                        (e.target as HTMLImageElement).src = `https://via.placeholder.com/800x400/12121e/58a6ff?text=${encodeURIComponent(project.title)}`;
-                    }}
-                />
+                {project.image ? (
+                    <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                        style={{
+                            backfaceVisibility: 'hidden',
+                            WebkitBackfaceVisibility: 'hidden',
+                        }}
+                        onError={(e) => {
+                            (e.target as HTMLImageElement).src = `https://via.placeholder.com/800x400/12121e/58a6ff?text=${encodeURIComponent(project.title)}`;
+                        }}
+                    />
+                ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-gray-800 text-gray-400 text-sm">
+                        No Image Available
+                    </div>
+                )}
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent from-40% to-black/90 z-10" />
 
@@ -72,29 +80,29 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
                 {/* Action Buttons */}
                 <div className="flex gap-3 mt-auto pt-2">
-                    <a
-                        href={project.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
+                    <button
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            window.open(project.url, '_blank', 'noopener,noreferrer');
+                        }}
                         className="flex-1 flex justify-center items-center gap-2 py-2 rounded-xl text-xs font-bold bg-white text-black hover:bg-gray-200 transition-colors relative z-20 shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]"
                     >
                         <ExternalLink size={14} />
                         Live Demo
-                    </a>
-                    <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
+                    </button>
+                    <button
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            window.open(project.githubUrl, '_blank', 'noopener,noreferrer');
+                        }}
                         className="flex-1 flex justify-center items-center gap-2 py-2 rounded-xl text-xs font-bold bg-white/[0.04] text-gray-300 border border-white/10 hover:bg-white/[0.08] hover:text-white transition-colors relative z-20"
                     >
                         <Github size={14} />
                         GitHub
-                    </a>
+                    </button>
                 </div>
             </div>
-        </Link>
+        </div>
     );
 };
 
