@@ -121,8 +121,8 @@ Steps:
 
 ## 📬 Connect With Me
 
-* Instagram: https://instagram.com/yourusername
-* LinkedIn: https://linkedin.com/in/yourusername
+* Instagram: https://instagram.com/sarvam.96k
+* LinkedIn: https://linkedin.com/in/shirodkarsarvam
 * GitHub: https://github.com/Sarvam96k
 
 ---
